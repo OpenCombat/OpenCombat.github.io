@@ -217,7 +217,6 @@ ul li::before {
 
 ol li::before {
     content: counter(li-counter);
-    color: #000;
     width: 20px;
     height: 20px;
 
