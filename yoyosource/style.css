@@ -1,4 +1,61 @@
+/* Variables */
+body {
+    --color: #000;
+    --background-color: #fff;
+    --link-color: #000;
+    --link-border-color: #000;
+    --link-hover-color: #fff;
+    --link-hover-background-color: #000;
+    --link-visited-color: #000;
+    --link-active-color: #fff;
+    --link-active-background-color: #000;
+    --link-focus-color: #fff;
+    --link-focus-background-color: #000;
+    --list-item-color: #000;
+    --list-item-background-color: #000;
+    --blockquote-border-color: #000;
+    --table-header-color: #fff;
+    --table-header-background-color: rgba(0, 0, 0, 0.7);
+    --table-row-color: #000;
+    --table-row-background-color: #fff;
+    --table-row-gradient: drop-shadow(0 0 9px rgba(0,0,0,0.1));
+    --hr-outer-color: rgba(0, 0, 0, 0);
+    --hr-inner-color: #000;
+    --details-border-color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --color: #fff;
+        --background-color: #000;
+        --link-color: #fff;
+        --link-border-color: #fff;
+        --link-hover-color: #000;
+        --link-hover-background-color: #fff;
+        --link-visited-color: #fff;
+        --link-active-color: #000;
+        --link-active-background-color: #fff;
+        --link-focus-color: #000;
+        --link-focus-background-color: #fff;
+        --list-item-color: #fff;
+        --list-item-background-color: #fff;
+        --blockquote-border-color: #fff;
+        --table-header-color: #000;
+        --table-header-background-color: rgba(255, 255, 255, 0.7);
+        --table-row-color: #fff;
+        --table-row-background-color: #000;
+        --table-row-gradient: drop-shadow(0 0 9px rgba(255,255,255,0.1));
+        --hr-outer-color: rgba(1, 1, 1, 0);
+        --hr-inner-color: #fff;
+        --details-border-color: #fff;
+    }
+}
+
 /* Stylesheet */
+:root {
+    color-scheme: light dark; /* both supported */
+}
+
 * {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
@@ -9,7 +66,7 @@ body {
     margin: auto auto 1em;
     padding: 0 max(min(calc((100% - 768px) / 2), 20%), 5px);
     width: max(20%, 768px);
-    background-color: #ffffff;
+    background-color: var(--background-color);
 }
 
 @media (max-width: 768px) {
@@ -28,47 +85,63 @@ h1 {
 
     display: flex;
     justify-content: center;
+
+    color: var(--color);
 }
 
 h2 {
     font-size: 2em;
     font-weight: 700;
     margin: 0.83em 0;
+
+    color: var(--color);
 }
 
 h3 {
     font-size: 1.5em;
     font-weight: 700;
     margin: 1em 0;
+
+    color: var(--color);
 }
 
 h4 {
     font-size: 1.25em;
     font-weight: 700;
     margin: 1.33em 0;
+
+    color: var(--color);
 }
 
 h5 {
     font-size: 1em;
     font-weight: 700;
     margin: 1.67em 0;
+
+    color: var(--color);
 }
 
 h6 {
     font-size: 0.9em;
     font-weight: 700;
     margin: 2.33em 0;
+
+    color: var(--color);
 }
 
 /* Paragraphs */
 p {
     margin: 1em 0;
+
+    color: var(--color);
 }
 
 p:has(img) {
     display: inline-flex;
     justify-content: center;
     width: 100%;
+
+    color: var(--color);
 }
 
 p > img {
@@ -84,30 +157,30 @@ img {
 /* Links */
 a {
     padding: 2px 7px;
-    color: #000;
+    color: var(--link-color);
     text-decoration: none;
-    border: 1px solid #000;
+    border: 1px solid var(--link-border-color);
     border-radius: 20px;
     justify-content: center;
 }
 
 a:visited {
-    color: #000;
+    color: var(--link-visited-color);
 }
 
 a:focus {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--link-focus-background-color);
+    color: var(--link-focus-color);
 }
 
 a:active {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--link-active-background-color);
+    color: var(--link-active-color);
 }
 
 a:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--link-hover-background-color);
+    color: var(--link-hover-color);
 }
 
 /* Lists */
@@ -129,12 +202,12 @@ ol li {
 
 ul li::before {
     content: ' ';
-    color: #000;
-    background-color: #000;
+    color: var(--list-item-color);
+    background-color: var(--list-item-background-color);
     width: 10px;
     height: 10px;
 
-    border: 2px solid black;
+    border: 2px solid var(--list-item-color);
     border-radius: 50px;
     display: inline-flex;
 
@@ -148,7 +221,8 @@ ol li::before {
     width: 20px;
     height: 20px;
 
-    border: 2px solid black;
+    color: var(--list-item-color);
+    border: 2px solid var(--list-item-color);
     border-radius: 50px;
     display: inline-flex;
     justify-content: center;
@@ -158,7 +232,7 @@ ol li::before {
 
 /* Blockquotes */
 blockquote {
-    border-left: 5px solid #000;
+    border-left: 5px solid var(--blockquote-border-color);
     padding: 0 0 0 1em;
     margin: 1em 0;
 }
@@ -180,19 +254,20 @@ table {
 td {
     padding: 0.5em 0.5em 0.5em 1em;
     margin-bottom: 1em;
+    color: var(--table-row-color);
 }
 
 tr {
     margin-bottom: 1em;
     border-radius: 10px;
-    background: #fff;
-    filter: drop-shadow(0 0 9px rgba(0,0,0,0.1));
+    background: var(--table-row-background-color);
+    filter: var(--table-row-gradient);
 }
 
 th {
     padding: 0.5em 0.5em 0.5em 1em;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
+    background-color: var(--table-header-background-color);
+    color: var(--table-header-color);
     text-align: left;
 }
 
@@ -220,22 +295,22 @@ td:last-child {
 hr {
     height: 2px;
     margin: 50px 0;
-    background: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(0, 0, 0, 0)), color-stop(0.5, #000000), to(rgba(0, 0, 0, 0)));
-    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), #000000, rgba(0, 0, 0, 0));
-    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0), #000000, rgba(0, 0, 0, 0));
-    background: -o-linear-gradient(left, rgba(0, 0, 0, 0), #000000, rgba(0, 0, 0, 0));
-    background: linear-gradient(left, rgba(0, 0, 0, 0), #000000, rgba(0, 0, 0, 0));
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(var(--hr-outer-color)), color-stop(0.5, var(--hr-inner-color)), to(var(--hr-outer-color)));
+    background: -webkit-linear-gradient(left, var(--hr-outer-color), var(--hr-inner-color), var(--hr-outer-color));
+    background: -moz-linear-gradient(left, var(--hr-outer-color), var(--hr-inner-color), var(--hr-outer-color));
+    background: -o-linear-gradient(left, var(--hr-outer-color), var(--hr-inner-color), var(--hr-outer-color));
+    background: linear-gradient(left, var(--hr-outer-color), var(--hr-inner-color), var(--hr-outer-color));
     border: 0;
 }
 hr:after {
     display: block;
     content: '';
     height: 2px;
-    background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 116, color-stop(0%, #000000), color-stop(100%, rgba(255, 255, 255, 0)));
-    background-image: -webkit-radial-gradient(center top, farthest-side, #000000 0%, rgba(255, 255, 255, 0) 100%);
-    background-image: -moz-radial-gradient(center top, farthest-side, #000000 0%, rgba(255, 255, 255, 0) 100%);
-    background-image: -o-radial-gradient(center top, farthest-side, #000000 0%, rgba(255, 255, 255, 0) 100%);
-    background-image: radial-gradient(farthest-side at center top, #000000 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 116, color-stop(0%, var(--hr-inner-color)), color-stop(100%, var(--hr-outer-color)));
+    background-image: -webkit-radial-gradient(center top, farthest-side, var(--hr-inner-color) 0%, var(--hr-outer-color) 100%);
+    background-image: -moz-radial-gradient(center top, farthest-side, var(--hr-inner-color) 0%, var(--hr-outer-color) 100%);
+    background-image: -o-radial-gradient(center top, farthest-side, var(--hr-inner-color) 0%, var(--hr-outer-color) 100%);
+    background-image: radial-gradient(farthest-side at center top, var(--hr-inner-color) 0%, var(--hr-outer-color) 100%);
 }
 
 /* Details, Summary */
@@ -249,9 +324,9 @@ details > * {
 }
 
 details > *:last-child {
-    border-bottom: 1px solid #000;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+    border-bottom: 1px solid var(--details-border-color);
+    border-left: 1px solid var(--details-border-color);
+    border-right: 1px solid var(--details-border-color);
 
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -260,7 +335,7 @@ details > *:last-child {
 details > summary {
     cursor: pointer;
 
-    border: 1px solid #000;
+    border: 1px solid var(--details-border-color);
     border-radius: 10px;
 
     -webkit-touch-callout: none;
@@ -278,10 +353,10 @@ details > summary > * {
 details[open] > summary {
     cursor: pointer;
 
-    border-top: 1px solid #000;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-    border-bottom: 1px dashed #000;
+    border-top: 1px solid var(--details-border-color);
+    border-left: 1px solid var(--details-border-color);
+    border-right: 1px solid var(--details-border-color);
+    border-bottom: 1px dashed var(--details-border-color);
 
     border-radius: 0px;
     border-top-left-radius: 10px;
@@ -301,11 +376,11 @@ details[open] > summary > * {
 
 /* Highlight */
 mark {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--background-color);
+    color: var(--color);
     padding-left: 3px;
     border-radius: 5px;
-    border: 1px dashed #000;
+    border: 1px dashed var(--color);
 }
 
 /* Removed */
