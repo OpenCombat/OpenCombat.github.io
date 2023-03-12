@@ -15,10 +15,10 @@ body {
     --list-item-background-color: #000;
     --blockquote-border-color: #000;
     --table-header-color: #fff;
-    --table-header-background-color: rgba(0, 0, 0, 0.7);
+    --table-header-background-color: rgba(0, 0, 0);
     --table-row-color: #000;
     --table-row-background-color: #fff;
-    --table-row-gradient: drop-shadow(0 0 9px rgba(0,0,0,0.1));
+    --table-row-gradient: drop-shadow(0 0 9px rgba(0,0,0,0.2));
     --hr-outer-color: rgba(0, 0, 0, 0);
     --hr-inner-color: #000;
     --details-border-color: #000;
@@ -41,10 +41,10 @@ body {
         --list-item-background-color: #fff;
         --blockquote-border-color: #fff;
         --table-header-color: #000;
-        --table-header-background-color: rgba(255, 255, 255, 0.7);
+        --table-header-background-color: rgba(255, 255, 255);
         --table-row-color: #fff;
         --table-row-background-color: #000;
-        --table-row-gradient: drop-shadow(0 0 9px rgba(255,255,255,0.1));
+        --table-row-gradient: drop-shadow(0 0 9px rgba(255,255,255,0.2));
         --hr-outer-color: rgba(1, 1, 1, 0);
         --hr-inner-color: #fff;
         --details-border-color: #fff;
@@ -72,7 +72,7 @@ body {
 @media (max-width: 768px) {
     body {
         width: calc(100% - 10px);
-        padding: 0px 5px;
+        padding: 0 5px;
     }
 }
 
@@ -136,7 +136,8 @@ p {
     color: var(--color);
 }
 
-p:has(img) {
+/* Divs */
+div {
     display: inline-flex;
     justify-content: center;
     width: 100%;
@@ -144,8 +145,24 @@ p:has(img) {
     color: var(--color);
 }
 
-p > img {
-    width: 50%;
+div > *:first-child {
+    width: calc(50% - 5px);
+    padding-right: 5px;
+}
+
+div > *:last-child {
+    width: calc(50% - 5px);
+    padding-left: 5px;
+}
+
+div > details > *:last-child {
+    width: calc(100% - 12px);
+    padding-left: 5px;
+    margin: 0px;
+}
+
+details > div {
+    width: calc(100% - 12px);
 }
 
 /* Image */
