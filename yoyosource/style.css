@@ -6,13 +6,9 @@ body {
     --hero-color: #fff;
     --hero-background-color: dodgerblue;
     --link-color: #000;
+    --link-background-color: #fff;
     --link-hover-color: #fff;
     --link-hover-background-color: #000;
-    --link-visited-color: #000;
-    --link-active-color: #fff;
-    --link-active-background-color: #000;
-    --link-focus-color: #fff;
-    --link-focus-background-color: #000;
     --list-item-color: #000;
     --list-item-background-color: #000;
     --blockquote-border-color: #000;
@@ -34,13 +30,9 @@ body {
         --hero-color: #fff;
         --hero-background-color: dodgerblue;
         --link-color: #fff;
+        --link-background-color: #000;
         --link-hover-color: #000;
         --link-hover-background-color: #fff;
-        --link-visited-color: #fff;
-        --link-active-color: #000;
-        --link-active-background-color: #fff;
-        --link-focus-color: #000;
-        --link-focus-background-color: #fff;
         --list-item-color: #fff;
         --list-item-background-color: #fff;
         --blockquote-border-color: #fff;
@@ -99,6 +91,7 @@ h1 {
     font-size: 2.5em;
     font-weight: 700;
     padding: 0.47em 0;
+    margin: 0;
 
     display: flex;
     justify-content: center;
@@ -111,6 +104,12 @@ h1 {
     h1 {
         position: sticky;
         top: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1::before {
+        height: 10%;
     }
 }
 
@@ -211,24 +210,21 @@ img {
 a {
     padding: 2px 7px;
     color: var(--link-color);
+    background-color: var(--link-background-color);
     text-decoration: none;
     box-shadow: 0 0 9px var(--border-color);
     border-radius: 10px;
     justify-content: center;
 }
 
-a:visited {
-    color: var(--link-visited-color);
-}
-
 a:focus {
-    background-color: var(--link-focus-background-color);
-    color: var(--link-focus-color);
+    background-color: var(--link-background-color);
+    color: var(--link-color);
 }
 
 a:active {
-    background-color: var(--link-active-background-color);
-    color: var(--link-active-color);
+    background-color: var(--link-background-color);
+    color: var(--link-color);
 }
 
 a:hover {
