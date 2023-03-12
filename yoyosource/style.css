@@ -169,7 +169,6 @@ div {
     width: 100%;
 
     color: var(--color);
-    margin-bottom: 1em;
 }
 
 div > *:first-child {
@@ -266,6 +265,7 @@ p > a:hover {
 ol, ul {
     list-style: none;
     padding: 0 0 0 0.5em;
+    margin-bottom: 1.3em;
 }
 
 li {
@@ -351,22 +351,12 @@ th {
     text-align: left;
 }
 
-th:first-child {
+th:first-child, td:first-child {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
-td:first-child {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-th:last-child {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-td:last-child {
+th:last-child, td:last-child {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
