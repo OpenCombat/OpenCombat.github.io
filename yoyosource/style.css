@@ -248,7 +248,9 @@ p > a {
     margin-right: -3px;
     color: var(--link-color);
     background-color: var(--link-background-color);
-    text-decoration: var(--link-color) underline solid 2px;
+    text-decoration: revert;
+    text-decoration-color: var(--link-color);
+    text-decoration-thickness: 2px;
     box-shadow: none;
     justify-content: center;
     border-radius: 10px;
@@ -257,7 +259,9 @@ p > a {
 p > a:hover {
     background-color: var(--link-hover-background-color);
     color: var(--link-hover-color);
-    text-decoration: var(--link-hover-color) underline solid 2px;
+    text-decoration: revert;
+    text-decoration-color: var(--link-hover-color);
+    text-decoration-thickness: 2px;
     border-radius: 10px;
 }
 
