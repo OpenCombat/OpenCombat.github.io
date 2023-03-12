@@ -3,6 +3,8 @@ body {
     --color: #000;
     --background-color: #fff;
     --border-color: #000;
+    --hero-color: #fff;
+    --hero-background-color: dodgerblue;
     --link-color: #000;
     --link-hover-color: #fff;
     --link-hover-background-color: #000;
@@ -29,6 +31,8 @@ body {
         --color: #fff;
         --background-color: #000;
         --border-color: #666;
+        --hero-color: #fff;
+        --hero-background-color: dodgerblue;
         --link-color: #fff;
         --link-hover-color: #000;
         --link-hover-background-color: #fff;
@@ -64,9 +68,11 @@ body {
 
 body {
     margin: auto auto 1em;
+
     padding: 0 max(min(calc((100% - 768px) / 2), 20%), 5px);
     width: max(20%, 768px);
     background-color: var(--background-color);
+    overflow-x: hidden;
 }
 
 @media (max-width: 768px) {
@@ -76,18 +82,39 @@ body {
     }
 }
 
-/* Headings */
+/* Hero */
+h1::before {
+    content: "";
+    background-color: var(--hero-background-color);
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    right: calc((100vw - 100%) / -2);
+    left: calc((100vw - 100%) / -2);
+}
+
 h1 {
     font-size: 2.5em;
     font-weight: 700;
-    margin: 0.67em 0;
+    padding: 0.47em 0;
 
     display: flex;
     justify-content: center;
+    width: 100%;
 
-    color: var(--color);
+    color: var(--hero-color);
 }
 
+@media screen and (min-width: 768px) {
+    h1 {
+        position: sticky;
+        top: 0;
+    }
+}
+
+/* Headings */
 h2 {
     font-size: 2em;
     font-weight: 700;
@@ -154,10 +181,27 @@ div > *:last-child {
     margin-left: 10px;
 }
 
+@media screen and (max-width: 768px) {
+    div {
+        display: block;
+    }
+
+    div > *:first-child {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    div > *:last-child {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
 /* Image */
 img {
     border-radius: 10px;
     max-width: 100%;
+    height: 100%;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     box-shadow: 0 0 9px var(--border-color);
