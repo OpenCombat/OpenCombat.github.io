@@ -76,13 +76,6 @@ body {
     }
 }
 
-::selection {
-    background-color: var(--color);
-    color: var(--background-color);
-    -webkit-text-stroke-color: var(--background-color);
-    -webkit-text-fill-color: var(--background-color);
-}
-
 /* Headings */
 
 h1 {
