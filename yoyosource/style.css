@@ -64,7 +64,7 @@ body {
     padding: 0 max(min(calc((100% - 768px) / 2), 20%), 5px);
     width: max(20%, 768px);
     background-color: var(--background-color);
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 @media (max-width: 768px) {
@@ -169,6 +169,7 @@ div {
     width: 100%;
 
     color: var(--color);
+    margin-bottom: 1em;
 }
 
 div > *:first-child {
@@ -211,7 +212,6 @@ details > div {
 img {
     border-radius: 10px;
     max-width: 100%;
-    height: 100%;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     box-shadow: 0 0 9px var(--border-color);
@@ -241,6 +241,25 @@ a:active {
 a:hover {
     background-color: var(--link-hover-background-color);
     color: var(--link-hover-color);
+}
+
+p > a {
+    padding: 3px 7px;
+    margin-left: -3px;
+    margin-right: -3px;
+    color: var(--link-color);
+    background-color: var(--link-background-color);
+    text-decoration: var(--link-color) underline solid 2px;
+    box-shadow: none;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+p > a:hover {
+    background-color: var(--link-hover-background-color);
+    color: var(--link-hover-color);
+    text-decoration: var(--link-hover-color) underline solid 2px;
+    border-radius: 10px;
 }
 
 /* Lists */
@@ -439,7 +458,9 @@ details[open] > summary > * {
 mark {
     background-color: var(--background-color);
     color: var(--color);
-    padding-left: 3px;
+    padding-left: 2px;
+    padding-right: 3px;
+    padding-top: 2px;
     border-radius: 5px;
     border: 1px dashed var(--color);
 }
