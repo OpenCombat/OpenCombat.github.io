@@ -145,13 +145,13 @@ div {
 }
 
 div > *:first-child {
-    width: calc(50% - 5px);
-    margin-right: 5px;
+    width: calc(50% - 10px);
+    margin-right: 10px;
 }
 
 div > *:last-child {
-    width: calc(50% - 5px);
-    margin-left: 5px;
+    width: calc(50% - 10px);
+    margin-left: 10px;
 }
 
 /* Image */
