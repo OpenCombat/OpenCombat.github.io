@@ -2,8 +2,8 @@
 body {
     --color: #000;
     --background-color: #fff;
-    --border-color: #000;
     --link-color: #000;
+    --border-color: #000;
     --link-hover-color: #fff;
     --link-hover-background-color: #000;
     --link-visited-color: #000;
@@ -28,8 +28,8 @@ body {
     body {
         --color: #fff;
         --background-color: #000;
-        --border-color: #666;
         --link-color: #fff;
+        --border-color: #fff;
         --link-hover-color: #000;
         --link-hover-background-color: #fff;
         --link-visited-color: #fff;
@@ -146,21 +146,28 @@ div {
 
 div > *:first-child {
     width: calc(50% - 5px);
-    margin-right: 5px;
+    padding-right: 5px;
 }
 
 div > *:last-child {
     width: calc(50% - 5px);
-    margin-left: 5px;
+    padding-left: 5px;
+}
+
+div > details > *:last-child {
+    width: calc(100% - 12px);
+    padding-left: 5px;
+    margin: 0px;
+}
+
+details > div {
+    width: calc(100% - 12px);
 }
 
 /* Image */
 img {
-    border-radius: 10px;
+    border-radius: 20px;
     max-width: 100%;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    box-shadow: 0 0 9px var(--border-color);
 }
 
 /* Links */
@@ -168,8 +175,8 @@ a {
     padding: 2px 7px;
     color: var(--link-color);
     text-decoration: none;
-    box-shadow: 0 0 9px var(--border-color);
-    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
     justify-content: center;
 }
 
@@ -221,7 +228,7 @@ ul li::before {
     display: inline-flex;
 
     padding: 4px;
-    margin: 0px 16px 0px 14px;
+    margin: 10px 14px 10px 15px;
 }
 
 ol li::before {
@@ -235,7 +242,7 @@ ol li::before {
     display: inline-flex;
     justify-content: center;
     padding: 4px 4px 6px;
-    margin: 0px 10px;
+    margin: 10px;
 }
 
 /* Blockquotes */
@@ -252,7 +259,7 @@ blockquote p {
 /* Tables */
 table {
     border-collapse: separate;
-    border-spacing: 0 0.3em;
+    border-spacing: 0 0.5em;
     width: 100%;
     table-layout: fixed;
     margin-top: 1em;
@@ -292,7 +299,7 @@ th:last-child, td:last-child {
 /* Horizontal Rule */
 hr {
     height: 2px;
-    margin: 5px 0;
+    margin: 50px 0;
     background: -webkit-gradient(linear, 0 0, 100% 0, from(var(--hr-outer-color)), color-stop(0.5, var(--hr-inner-color)), to(var(--hr-outer-color)));
     background: -webkit-linear-gradient(left, var(--hr-outer-color), var(--hr-inner-color), var(--hr-outer-color));
     background: -moz-linear-gradient(left, var(--hr-outer-color), var(--hr-inner-color), var(--hr-outer-color));
@@ -309,6 +316,67 @@ hr:after {
     background-image: -moz-radial-gradient(center top, farthest-side, var(--hr-inner-color) 0%, var(--hr-outer-color) 100%);
     background-image: -o-radial-gradient(center top, farthest-side, var(--hr-inner-color) 0%, var(--hr-outer-color) 100%);
     background-image: radial-gradient(farthest-side at center top, var(--hr-inner-color) 0%, var(--hr-outer-color) 100%);
+}
+
+/* Details, Summary */
+details {
+    margin: 1em 0;
+}
+
+details > * {
+    padding: 5px;
+    margin: 0px;
+}
+
+details > *:last-child {
+    border-bottom: 1px solid var(--details-border-color);
+    border-left: 1px solid var(--details-border-color);
+    border-right: 1px solid var(--details-border-color);
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+details > summary {
+    cursor: pointer;
+
+    border: 1px solid var(--details-border-color);
+    border-radius: 10px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+details > summary > * {
+    display: inline;
+}
+
+details[open] > summary {
+    cursor: pointer;
+
+    border-top: 1px solid var(--details-border-color);
+    border-left: 1px solid var(--details-border-color);
+    border-right: 1px solid var(--details-border-color);
+    border-bottom: 1px dashed var(--details-border-color);
+
+    border-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+details[open] > summary > * {
+    display: inline;
 }
 
 /* Highlight */
