@@ -244,6 +244,7 @@ ol, ul {
 
 li {
     margin: 0.7em 0;
+    color: var(--color);
 }
 
 ol {
@@ -287,6 +288,7 @@ blockquote {
     border-left: 5px solid var(--blockquote-border-color);
     padding: 0 0 0 1em;
     margin: 1em 0;
+    color: var(--color);
 }
 
 blockquote p {
