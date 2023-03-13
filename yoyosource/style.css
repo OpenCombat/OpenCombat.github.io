@@ -376,6 +376,7 @@ hr {
     background: linear-gradient(left, var(--hr-outer-color), var(--hr-inner-color), var(--hr-outer-color));
     border: 0;
 }
+
 hr:after {
     display: block;
     content: '';
